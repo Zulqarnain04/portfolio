@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — Landing</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; /* dark navy */
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#7c5cff;
+      --glass: rgba(255,255,255,0.04);
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background:linear-gradient(180deg,#071122 0%, #07101a 100%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+
+    header{
+      display:flex;align-items:center;justify-content:space-between;padding:18px 0;
+    }
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{
+      width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#4cc9f0);display:flex;align-items:center;justify-content:center;font-weight:700;color:#07101a
+    }
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-weight:500}
+    .cta{background:linear-gradient(90deg,var(--accent),#5fe7c4);color:#07101a;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+
+    /* mobile menu */
+    .menu-toggle{display:none;background:transparent;border:0;color:var(--muted);font-size:18px}
+
+    /* hero */
+    .hero{display:grid;grid-template-columns:1fr 480px;gap:28px;align-items:center;padding:36px 0}
+    .eyebrow{color:var(--accent);font-weight:700;font-size:13px}
+    h1{font-size:36px;margin:10px 0 12px}
+    p.lead{color:var(--muted);max-width:60ch}
+    .hero-art{background:linear-gradient(135deg, rgba(124,92,255,0.16), rgba(79,197,240,0.06));border-radius:18px;padding:28px;display:flex;align-items:center;justify-content:center}
+    .mock{
+      width:100%;height:300px;border-radius:12px;background:linear-gradient(135deg,#07101a, #0b2136);box-shadow:0 8px 30px rgba(12,22,40,0.6);display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:600
+    }
+
+    /* features */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+    .card{background:var(--card);padding:18px;border-radius:12px}
+    .card h3{margin:0 0 8px}
+    .card p{color:var(--muted);margin:0}
+
+    /* CTA */
+    .cta-banner{margin:40px 0;padding:20px;border-radius:14px;background:linear-gradient(180deg, rgba(124,92,255,0.06), rgba(79,197,240,0.02));display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .cta-banner p{margin:0}
+
+    footer{padding:28px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.03);margin-top:40px}
+
+    /* responsiveness */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr 1fr}
+      .features{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:720px){
+      .container{padding:16px}
+      nav{display:none}
+      .menu-toggle{display:inline-block}
+      .hero{grid-template-columns:1fr;gap:18px}
+      .hero-art{order:-1}
+      .features{grid-template-columns:1fr}
+    }
+
+    /* small utilities */
+    .muted{color:var(--muted)}
+    .btn-outline{padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);color:var(--muted);text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">P</div>
+        <div>
+          <div style="font-weight:700">Your Name</div>
+          <div style="font-size:12px;color:var(--muted)">Designer • Developer</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="#contact">Hire me</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Open menu" id="menuToggle">☰</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <div class="eyebrow">Featured Project</div>
+          <h1>Crafting beautiful web experiences that convert</h1>
+          <p class="lead">I design and build accessible, performant websites and apps. I focus on clear interactions, fast load times and delightful microcopy that guides users to take action.</p>
+          <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+            <a class="cta" href="#work">View work</a>
+            <a class="btn-outline" href="#about">Learn more</a>
+          </div>
+
+          <div class="features" style="margin-top:28px">
+            <div class="card">
+              <h3>Design systems</h3>
+              <p class="muted">Reusable components, accessible tokens and consistent layouts.</p>
+            </div>
+            <div class="card">
+              <h3>Frontend dev</h3>
+              <p class="muted">Fast, SEO-friendly builds using modern JS frameworks or vanilla code.</p>
+            </div>
+            <div class="card">
+              <h3>Performance</h3>
+              <p class="muted">Optimized images, caching, and minimal runtime for real-world speed.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="mock">Project screenshot or illustration</div>
+        </div>
+      </section>
+
+      <section class="cta-banner">
+        <div>
+          <strong>Want to work together?</strong>
+          <p class="muted" style="margin-top:6px">I'm available for freelance projects and full-time roles. Let's chat about your goals.</p>
+        </div>
+        <div style="display:flex;gap:12px">
+          <a class="cta" href="#contact">Get in touch</a>
+          <a class="btn-outline" href="#work">See portfolio</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>&copy; "Your Name" <span class="muted">• Built with care</span></div>
+        <div class="muted">Made with HTML, CSS & JS</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // simple mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    menuToggle && menuToggle.addEventListener('click', () => {
+      const nav = document.querySelector('nav');
+      if(!nav) return;
+      if(nav.style.display === 'flex'){
+        nav.style.display = '';
+      } else {
+        nav.style.display = 'flex';
+        nav.style.flexDirection = 'column';
+        nav.style.position = 'absolute';
+        nav.style.top = '72px';
+        nav.style.right = '24px';
+        nav.style.background = 'var(--glass)';
+        nav.style.padding = '12px';
+        nav.style.borderRadius = '10px';
+      }
+    });
+  </script>
+</body>
+</html>
